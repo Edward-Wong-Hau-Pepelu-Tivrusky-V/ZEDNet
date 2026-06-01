@@ -277,30 +277,13 @@ Recommended environment:
 
 ```text
 Python >= 3.9
-PyTorch
-NumPy
+albumentations
+matplotlib
+numpy
+pandas
+scikit-learn
+tensorboard
 tifffile
+torch
 tqdm
-PyYAML
-scikit-image
-```
-
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Citation
-
-If you use this repository in academic work, please cite the associated publication.
-
-```bibtex
-@article{shaw2026extrusion,
-  title={Automated Detection of Cell Extrusion Events Using Synthetic Training Data},
-  author={Shaw, William et al.},
-  year={2026}
-}
 ```
