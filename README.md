@@ -14,172 +14,132 @@ This repository contains the code, data generation pipeline, and trained models 
 ```
 
 ### `real_data/`
+Contains real image sequences and corresponding ground-truth labels.
 
-Contains experimentally acquired embryo image volumes and corresponding segmentation masks.
+| Folder | Description |
+|--------|-------------|
+| `01, 02, ...` | Raw real image sequences |
+| `01_GT, 02_GT, ...` | Ground-truth labels associated with each sequence |
 
-```text
-real_data/
-├── 01/
-├── 01_GT/
-├── 03/
-└── 03_GT/
-```
-
-#### Raw image data
-
-Folders (`01`, `03`, etc.) contain microscopy image stacks used for analysis.
-
-Example:
-
-```text
-01/
-├── 0939-0415-0160.tif
-├── 1360-0340-0532.tif
-└── 1590-0315-0307.tif
-```
-
-#### Ground truth segmentations
-
-Ground truth segmentation masks generated using Cellpose.
-
-```text
-01_GT/SEG/
-├── cellpose_seg_0939-0415-0160.tif
-├── cellpose_seg_1360-0340-0532.tif
-├── cellpose_seg_1590-0315-0307.tif
-└── RoiSet.zip
-```
-
-`RoiSet.zip` contains manually curated ROIs used for validation and synthetic data generation.
+These data are used to:
+- Estimate biological and imaging parameters
+- Guide scaling of synthetic generation parameters
 
 ---
 
-## Synthetic Data Generation
+## Installation
 
-The synthetic data generation pipeline creates realistic extrusion and control examples for CNN training.
-
-```text
-Sythetic_data_generation/
-├── config/
-├── data_generator/
-├── scripts/
-├── train_data/
-└── utils/
-```
-
-### Configuration
-
-```text
-config/
-├── global_parameters.yaml
-└── synth_parameters.yaml
-```
-
-Contains all parameters controlling:
-
-* Tissue sampling
-* Extrusion simulation
-* Intensity perturbations
-* Dataset generation
+All code is written in **Python**.
 
 ---
 
-### Data Generator
+## Synthetic Image Generation
 
-```text
-data_generator/
+Synthetic tissue images are generated using parameters defined in:
+
+```
+main/config/
 ```
 
-Main scripts used for synthetic patch generation.
+Two parameter groups are used:
 
-#### Core files
-
-| File                                 | Description                                       |
-| ------------------------------------ | ------------------------------------------------- |
-| `synthetic_generator.py`             | Main synthetic data generation pipeline           |
-| `GeneratorPatchData_more_homogen.py` | Generates extrusion patches from sampled cells    |
-| `GeneratorSampler.py`                | Samples cells from segmented embryos              |
-| `GeneratorTissueData.py`             | Creates tissue datasets used for patch generation |
-
-#### Sampled Data
-
-```text
-sampled_data/data_WILL/
-```
-
-Contains sampled cell geometries extracted from real embryo segmentations and stored as pickle files.
-
-Example:
-
-```text
-cellpose_seg_0939-0415-0160.pkl
-```
+| Group | Purpose |
+|------|---------|
+| **global** | Parameters derived from real data |
+| **synth** | Parameters controlling synthetic image generation |
 
 ---
 
-### Generated Training Data
+## SYNTH Parameters (Synthetic Image Generation)
 
-```text
+### Shape Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `IMAGE_SIZE` | list | Synthetic image size in pixels |
+| `CELL_R *` | list | Range of cell radii (µm) |
+| `Z_SCALE *` | float | Scale factor in z-direction (<1 = flatter, >1 = elongated shapes) |
+| `CELL_SEPARATION *` | int | Minimum distance between sampled cells |
+
+---
+
+### Sampling Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `DISTMAP_BLUR` | bool | If `True`, blur the distance map |
+| `DISTMAP_SIG` | float | Sigma for distance map blur |
+| `GAUSSIAN_BLUR` | bool | If `True`, blur final image |
+| `GAUSSIAN_SIG` | float or list | Sigma for final image blur |
+
+---
+
+**Notes**
+
+- `*` → Values should be based on real data
+---
+
+## Main Pipeline
+
+Core script:
+
+```
+main/GeneratorPatchData.py
+```
+
+### Processing Steps
+
+1. Generate a new packed cell tissue  
+2. Along the center slice of each layer, measure unique integers to identify candidate extrusions  
+3. Accept candidate extrusions if:
+   - Edge criteria satisfied  
+   - Rosette size criteria satisfied  
+4. Add extrusions with designated size relative to mean cell radius  
+5. Validate extrusion count  
+   - If incorrect → restart generation  
+6. Rotate and extract patches (extrusion + control)  
+7. Save samples and update dataset counter  
+
+---
+
+## Non-Config Parameters (Defined in Code)
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| `N_max` | 800 | Maximum cells per layer (high value improves packing) |
+| `w_s` | 5 | Sliding window size for unique integer count in 2D slice |
+| `w_z` | 1 | Width of layer sampling space |
+| `rosette_size_parameter` | 0.7 | Mean radii of rosette cells must exceed this proportion of all cell radii |
+| `extrusion_p` | 0.7 | Extrusion size as fraction of mean cell radius |
+| `rotation_p` | 0.2 | Fraction of patches rotated between −30° and 30° |
+
+---
+
+## Output
+
+The generator produces:
+- Extrusion patches  
+- Control patches  
+
+```
 train_data/
 ├── control/
-└── extrusion/
+├── extrusion/
 ```
-
-Contains synthetic training patches.
-
-#### Control patches
-
-```text
-control/
-├── 001.tif
-├── 002.tif
-└── ...
-```
-
-#### Extrusion patches
-
-```text
-extrusion/
-├── 001.tif
-├── 002.tif
-└── ...
-```
-
-These datasets are used directly for CNN training.
 
 ---
 
-### Utility Functions
-
-```text
-utils/
-├── load_config.py
-└── setup_logger.py
-```
-
-Provides configuration loading and logging functionality used throughout the pipeline.
-
----
-
-### Generation Scripts
-
-```text
-scripts/
-├── GenerateData.sh
-└── Sampling.sh
-```
-
-Shell scripts for reproducing the sampling and synthetic data generation pipeline.
+## Running the Generator
 
 Example:
 
 ```bash
-bash scripts/Sampling.sh
-bash scripts/GenerateData.sh
-```
-
----
-
+# Example Training Dataset
+python data_generator/GeneratorPatchData.py \
+    --N 8 \
+    --sampler-dir data_generator/sampled_data/data_WILL/ \
+    --output-dir train_data/ \
+    --logger log_train_data.txt \
 ## ZEDNet
 
 Contains the neural network architecture, training scripts, testing scripts, and trained weights.
