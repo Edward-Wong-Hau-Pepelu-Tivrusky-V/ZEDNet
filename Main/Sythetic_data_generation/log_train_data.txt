@@ -1,0 +1,109 @@
+2026-05-07 15:13:13 | INFO | Starting synthetic data generator for 3D extrusion classifier.
+2026-05-07 15:13:13 | INFO | Samplers Loaded: 8
+2026-05-07 15:13:13 | INFO | Parameters: N_max: 8000, w_s: 5, w_z: 1, rosette_size_parameter: 0.7, extrusion_p: 0.7, rotation_p: 0
+2026-05-07 15:13:13 | DEBUG | Image Size (64,256,256)
+2026-05-07 15:13:13 | DEBUG | Cell Layers: 8
+2026-05-07 15:15:06 | DEBUG | Generation 1: No Extrusions
+2026-05-02026-05-07 15:37:01 | DEBUG | Generation 2: Success, 5 Extrusions ==> (1/10)
+2026-05-07 15:38:54 | DEBUG | Generation 3: less than 5 Extrusions
+2026-05-07 15:40:43 | DEBUG | Generation 4: less than 5 Extrusions
+2026-05-07 15:42:31 | DEBUG | Generation 5: less than 5 Extrusions
+2026-05-07 16:05:09 | DEBUG | Generation 6: Success, 7 Extrusions ==> (2/10)
+2026-05-07 16:27:32 | DEBUG | Generation 7: Success, 5 Extrusions ==> (3/10)
+2026-05-07 16:29:28 | DEBUG | Generation 8: less than 5 Extrusions
+2026-05-07 16:31:20 | DEBUG | Generation 9: less than 5 Extrusions
+2026-05-07 16:53:00 | DEBUG | Generation 10: Success, 5 Extrusions ==> (4/10)
+2026-05-07 16:54:40 | DEBUG | Generation 11: less than 5 Extrusions
+2026-05-07 16:56:20 | DEBUG | Generation 12: less than 5 Extrusions
+2026-05-07 16:58:08 | DEBUG | Generation 13: less than 5 Extrusions
+2026-05-07 17:00:03 | DEBUG | Generation 14: less than 5 Extrusions
+2026-05-07 17:01:51 | DEBUG | Generation 15: less than 5 Extrusions
+2026-05-07 17:03:50 | DEBUG | Generation 16: less than 5 Extrusions
+2026-05-07 17:05:37 | DEBUG | Generation 17: less than 5 Extrusions
+2026-05-07 17:27:44 | DEBUG | Generation 18: Success, 7 Extrusions ==> (5/10)
+2026-05-07 17:29:28 | DEBUG | Generation 19: less than 5 Extrusions
+2026-05-07 17:51:39 | DEBUG | Generation 20: Success, 5 Extrusions ==> (6/10)
+2026-05-07 18:13:45 | DEBUG | Generation 21: Success, 5 Extrusions ==> (7/10)
+2026-05-07 18:15:22 | DEBUG | Generation 22: less than 5 Extrusions
+2026-05-07 18:17:11 | DEBUG | Generation 23: less than 5 Extrusions
+2026-05-07 18:18:56 | DEBUG | Generation 24: less than 5 Extrusions
+2026-05-07 18:20:41 | DEBUG | Generation 25: less than 5 Extrusions
+2026-05-07 18:42:32 | DEBUG | Generation 26: Success, 5 Extrusions ==> (8/10)
+2026-05-07 19:04:25 | DEBUG | Generation 27: Success, 5 Extrusions ==> (9/10)
+2026-05-07 19:06:11 | DEBUG | Generation 28: less than 5 Extrusions
+2026-05-07 19:28:15 | DEBUG | Generation 29: Success, 5 Extrusions ==> (10/10)
+UG | Generation 29: Success, 4 Extrusions ==> (94/400)
+2026-05-07 16:25:51 | DEBUG | Generation 30: Success, 3 Extrusions ==> (100/400)
+2026-05-07 16:27:34 | DEBUG | Generation 31: No Extrusions
+2026-05-07 16:30:35 | DEBUG | Generation 32: Success, 2 Extrusions ==> (104/400)
+2026-05-07 16:34:31 | DEBUG | Generation 33: Success, 6 Extrusions ==> (116/400)
+2026-05-07 16:36:31 | DEBUG | Generation 34: Success, 1 Extrusions ==> (118/400)
+2026-05-07 16:38:42 | DEBUG | Generation 35: Success, 1 Extrusions ==> (120/400)
+2026-05-07 16:41:11 | DEBUG | Generation 36: Success, 2 Extrusions ==> (124/400)
+2026-05-07 16:43:13 | DEBUG | Generation 37: Success, 1 Extrusions ==> (126/400)
+2026-05-07 16:45:42 | DEBUG | Generation 38: Success, 2 Extrusions ==> (130/400)
+2026-05-07 16:48:14 | DEBUG | Generation 39: Success, 2 Extrusions ==> (134/400)
+2026-05-07 16:49:57 | DEBUG | Generation 40: Error with Adding 3 Extrusions. (2427 -/-> 2429)
+2026-05-07 16:51:34 | DEBUG | Generation 41: No Extrusions
+2026-05-07 16:53:56 | DEBUG | Generation 42: Success, 2 Extrusions ==> (138/400)
+2026-05-07 16:56:21 | DEBUG | Generation 43: Success, 2 Extrusions ==> (142/400)
+2026-05-07 16:58:28 | DEBUG | Generation 44: Success, 1 Extrusions ==> (144/400)
+2026-05-07 17:00:46 | DEBUG | Generation 45: Success, 1 Extrusions ==> (146/400)
+2026-05-07 17:02:55 | DEBUG | Generation 46: Success, 1 Extrusions ==> (148/400)
+2026-05-07 17:05:54 | DEBUG | Generation 47: Success, 3 Extrusions ==> (154/400)
+2026-05-07 17:08:36 | DEBUG | Generation 48: Success, 2 Extrusions ==> (158/400)
+2026-05-07 17:10:25 | DEBUG | Generation 49: Error with Adding 1 Extrusions. (2433 -/-> 2433)
+2026-05-07 17:13:05 | DEBUG | Generation 50: Success, 3 Extrusions ==> (164/400)
+2026-05-07 17:14:54 | DEBUG | Generation 51: No Extrusions
+2026-05-07 17:18:55 | DEBUG | Generation 52: Success, 6 Extrusions ==> (176/400)
+2026-05-07 17:20:32 | DEBUG | Generation 53: No Extrusions
+2026-05-07 17:22:13 | DEBUG | Generation 54: No Extrusions
+2026-05-07 17:24:42 | DEBUG | Generation 55: Success, 2 Extrusions ==> (180/400)
+2026-05-07 17:27:55 | DEBUG | Generation 56: Success, 4 Extrusions ==> (188/400)
+2026-05-07 17:30:45 | DEBUG | Generation 57: Success, 2 Extrusions ==> (192/400)
+2026-05-07 17:32:46 | DEBUG | Generation 58: Success, 1 Extrusions ==> (194/400)
+2026-05-07 17:35:09 | DEBUG | Generation 59: Success, 2 Extrusions ==> (198/400)
+2026-05-07 17:37:09 | DEBUG | Generation 60: Success, 1 Extrusions ==> (200/400)
+2026-05-07 17:40:50 | DEBUG | Generation 61: Success, 5 Extrusions ==> (210/400)
+2026-05-07 17:42:36 | DEBUG | Generation 62: No Extrusions
+2026-05-07 17:44:45 | DEBUG | Generation 63: Success, 1 Extrusions ==> (212/400)
+2026-05-07 17:47:06 | DEBUG | Generation 64: Success, 1 Extrusions ==> (214/400)
+2026-05-07 17:49:15 | DEBUG | Generation 65: Success, 1 Extrusions ==> (216/400)
+2026-05-07 17:50:58 | DEBUG | Generation 66: No Extrusions
+2026-05-07 17:53:39 | DEBUG | Generation 67: Success, 2 Extrusions ==> (220/400)
+2026-05-07 17:55:46 | DEBUG | Generation 68: Success, 1 Extrusions ==> (222/400)
+2026-05-07 17:58:46 | DEBUG | Generation 69: Success, 3 Extrusions ==> (228/400)
+2026-05-07 18:00:45 | DEBUG | Generation 70: Success, 1 Extrusions ==> (230/400)
+2026-05-07 18:02:58 | DEBUG | Generation 71: Success, 1 Extrusions ==> (232/400)
+2026-05-07 18:05:34 | DEBUG | Generation 72: Success, 2 Extrusions ==> (236/400)
+2026-05-07 18:08:08 | DEBUG | Generation 73: Success, 2 Extrusions ==> (240/400)
+2026-05-07 18:09:53 | DEBUG | Generation 74: No Extrusions
+2026-05-07 18:12:30 | DEBUG | Generation 75: Success, 3 Extrusions ==> (246/400)
+2026-05-07 18:15:22 | DEBUG | Generation 76: Success, 3 Extrusions ==> (252/400)
+2026-05-07 18:18:12 | DEBUG | Generation 77: Success, 3 Extrusions ==> (258/400)
+2026-05-07 18:21:52 | DEBUG | Generation 78: Success, 5 Extrusions ==> (268/400)
+2026-05-07 18:23:57 | DEBUG | Generation 79: Success, 1 Extrusions ==> (270/400)
+2026-05-07 18:27:23 | DEBUG | Generation 80: Success, 5 Extrusions ==> (280/400)
+2026-05-07 18:30:43 | DEBUG | Generation 81: Success, 4 Extrusions ==> (288/400)
+2026-05-07 18:32:55 | DEBUG | Generation 82: Success, 1 Extrusions ==> (290/400)
+2026-05-07 18:35:10 | DEBUG | Generation 83: Success, 2 Extrusions ==> (294/400)
+2026-05-07 18:38:49 | DEBUG | Generation 84: Success, 5 Extrusions ==> (304/400)
+2026-05-07 18:41:21 | DEBUG | Generation 85: Success, 2 Extrusions ==> (308/400)
+2026-05-07 18:44:15 | DEBUG | Generation 86: Success, 3 Extrusions ==> (314/400)
+2026-05-07 18:47:33 | DEBUG | Generation 87: Success, 3 Extrusions ==> (320/400)
+2026-05-07 18:50:31 | DEBUG | Generation 88: Success, 4 Extrusions ==> (328/400)
+2026-05-07 18:53:48 | DEBUG | Generation 89: Success, 4 Extrusions ==> (336/400)
+2026-05-07 18:56:35 | DEBUG | Generation 90: Success, 3 Extrusions ==> (342/400)
+2026-05-07 18:58:21 | DEBUG | Generation 91: No Extrusions
+2026-05-07 19:00:55 | DEBUG | Generation 92: Success, 2 Extrusions ==> (346/400)
+2026-05-07 19:03:40 | DEBUG | Generation 93: Success, 3 Extrusions ==> (352/400)
+2026-05-07 19:06:24 | DEBUG | Generation 94: Success, 3 Extrusions ==> (358/400)
+2026-05-07 19:09:28 | DEBUG | Generation 95: Success, 4 Extrusions ==> (366/400)
+2026-05-07 19:12:04 | DEBUG | Generation 96: Success, 2 Extrusions ==> (370/400)
+2026-05-07 19:14:59 | DEBUG | Generation 97: Success, 3 Extrusions ==> (376/400)
+2026-05-07 19:16:51 | DEBUG | Generation 98: No Extrusions
+2026-05-07 19:19:03 | DEBUG | Generation 99: Success, 1 Extrusions ==> (378/400)
+2026-05-07 19:21:48 | DEBUG | Generation 100: Success, 3 Extrusions ==> (384/400)
+2026-05-07 19:24:53 | DEBUG | Generation 101: Success, 3 Extrusions ==> (390/400)
+2026-05-07 19:28:03 | DEBUG | Generation 102: Success, 4 Extrusions ==> (398/400)
+2026-05-07 21:05:18 | DEBUG | Generation 103: Success, 1 Extrusions ==> (400/400)

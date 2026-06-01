@@ -1,0 +1,29 @@
+############################ SYNTH - Parameters for Synthetic Images ############################
+### Shape ###
+#    IMAGE_SIZE - list - Synthetic image size in pixels
+#    CELL_R (*) - list - range of cell radii (in mu)
+#    Z_SCALE (*) - float - scale the distances in z; flatten (<1) or elongate (>1) shapes.
+#    CELL_SEPARATION (*) - int - Miniumum distance between sampled cells
+
+### Sampling ###
+#    DISTMAP_BLUR - bool - if True, blur distance map
+#    DISTMAP_SIG - float - scale of distance map blur 
+#    GAUSSIAN_BLUR - bool - if True, blur final image
+#    GAUSSIAN_SIG - float or list - scale of final image blur
+
+# (*) - values should be based on original data. The values are scaled with respect to DOWNSAMPLE
+# (**) - parameters for Fluorecent Sampler
+#################################################################################################
+
+SHAPE:
+    IMAGE_SIZE: [64, 256, 256]
+    CELL_R: [6,9]
+    Z_SCALE: 1
+    CELL_SEPARATION: 2
+    PATCH_SIZE: [16,64,64]
+    
+SAMPLER:
+    DISTMAP_BLUR: False
+    DISTMAP_SIG: .1
+    GAUSSIAN_BLUR: True
+    GAUSSIAN_SIG: .5    
